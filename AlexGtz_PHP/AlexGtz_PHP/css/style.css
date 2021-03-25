@@ -1,0 +1,367 @@
+:root{ /* Crear Variables guardar variables, en este caso una paleta de colores*/
+    --azulIMC:#1C74CB;
+    --verdeIMC: #0d9343;
+    --rojoIMC: #cf2f14;
+    --amarilloIMC: #f6c51a;
+    --fondo: #C2E1FF ;
+
+    --TamañoTitulo: 6rem; /*rem = tamaño de letra, cajas*/ 
+    --TamañoParrafos: 2rem; /*rem = tamaño de letra, cajas (Ya normalizado 1rem=10px en distintos tipos de pantalla)*/
+}
+
+/*------------------Código para normalizar correctamente el sitio web (Siempre se deja igual font-size: 62.5%;)--------------------*/
+html{ 
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after { /*Estandariza cajas siempre se deja igual*/
+    box-sizing: inherit;
+  }
+
+body{ 
+    font-family: 'Fraunces', serif;
+    background-image: linear-gradient(to top, var(--fondo) 0%, whitesmoke 100% ); /*---  1) Hacia donde irá el degradado  2) Que color se irá degradando - siempre 0% es donde inicia el color 3) el color al que se va a degradar 100% es hasta donde va a terminar de degradar---*/
+}
+/*------------------Código para normalizar correctamente el sitio web (Siempre se deja igual font-size: 62.5%;)--------------------*/
+
+
+
+/*------------------Agregaremos nuestro propio estandar------------------------------*/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+h1,h2{
+    text-align: center;
+}
+/*------------------Agregaremos nuestro propio estandar------------------------------*/
+
+
+
+/*----------------------------------------Barra de Navegación---21/01/21------------------------------------------------------------*/
+.subtitulo{
+    color: black;
+    font-size: 3rem;
+}
+.contenedor{
+    max-width: 80%;
+    margin: 1.5rem auto auto auto; /*Como manecillas reloj*/
+}
+.nav-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-principal a{
+    display: block;
+    text-align: center;
+    text-decoration: none;/*quita decoraciones*/
+    color: whitesmoke;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.nav-fondo{
+    background-color: var(--azulIMC);
+}
+/*----------------------------------------Barra de Navegación---21/01/21------------------------------------------------------------*/
+
+/*--------------------------------25/01/21---------------------------------------------------*/
+
+.nav-principal a:hover{
+    background-color: var(--amarilloIMC);
+    color: black;
+}
+
+@media (max-width: 480px){/*Dimension Celulares tabletas pequeñas ----------- Se voltearon los datos a max para no batallar tanto (Tambien habria que cambiar a row en .nav-principal*/
+    body{
+        background-color: pink;
+    }
+    .nav-principal{
+        flex-direction: column;
+    }
+    .contenedor{
+        max-width: 90%;
+        margin: 1.5rem auto auto auto; /*Como manecillas reloj*/
+    }
+}
+
+@media (min-width: 768px){/*Tablets*/
+    .contenedor{
+        max-width: 80%;
+        margin: 1.5rem auto auto auto; /*Como manecillas reloj*/
+    }
+}
+
+@media (min-width: 1140px){/*Dimension Laptops*/
+    .contenedor{
+        max-width: 70%;
+        margin: 1.5rem auto auto auto; /*Como manecillas reloj*/
+    }
+}
+
+@media (min-width: 1445px){/*Dispositivos HD*/
+    .contenedor{
+        max-width: 60%;
+        margin: 1.5rem auto auto auto; /*Como manecillas reloj*/
+    }
+}
+
+/*--------------------------------Fondo del banner 25/01/21---------------------------------------------------*/
+.banner{
+    background-image: url(../img/hero.jpg); /*".."(dos puntos) son para salir de la carpeta*/
+    background-repeat: no-repeat; /*No repetir la imágen*/
+    background-size: cover; /*para alargar imagen*/
+    height: 35rem;
+    position: relative; /*Siempre se deja igual*/
+}
+
+.contenido-banner{
+    position: absolute;
+    background-color: rgba(0,0,0, .6); /*color al banner el ultimo dato para darle transparencia*/
+    width: 100%;
+    height: 100%;
+}
+/*--------------------------------Fondo del banner 25/01/21---------------------------------------------------*/
+
+
+/*--------------------------------contenido del banner 27/01/21---------------------------------------------------*/
+
+span{ /*Se convierte en clase hijo del título-banner y disminuye un poco el tamaño de la letra*/
+    font-size: 2rem;
+}
+
+.centrar{ /*Centra todos los contenidos*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-banner h2{
+    color: white;
+    font-size: 3rem; /*Centra un poquito más los datos*/
+    margin-top: 0;
+}
+
+.contenido-banner p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.ubicacion{
+    display: flex; /*Convierte los objetos para empezar a utilizar display flex*/
+    align-items: flex-end; /*Alinea el texto en la parte de abajo a la derecha*/
+}
+
+.boton{
+    background-color: var(--azulIMC);
+    color:whitesmoke ;
+    padding: 1rem 2rem; /*Alto y Ancho en rems del botón*/
+    margin-top: 3rem; /*Márgen que separa al botón de los demás objetos*/
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem; /*Redondea las esquinas*/
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    background-color: var(--amarilloIMC);
+    color: black;
+}
+
+/*--------------------------------contenido del banner 27/01/21---------------------------------------------------*/
+
+/*------------------------------------------Degradados 02/02/21---------------------------------------------------------*/
+
+
+
+/*------------------------------------------Degradados 02/02/21---------------------------------------------------------*/
+
+/*Para crear el fondo del sitio web se escribe el código en la parte de body{}*/
+/*Se agregó 80% de pantalla a la clase de contenedor y .contenedor se agregó como clase también en la etiqueta main de HTML*/
+/*Se le asigno despues la clase .centrar a las etiquetas de section dentro del main para acomodar los datos*/
+
+.sombra{ /*Se obtiene de: https://www.cssmatic.com/box-shadow ------------ creamos cuadro blanco con sombreado dentro del main ---*/
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.77);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.77);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.77);
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 1rem;
+} /*Agregamos la sombra en la etiqueta <main>*/
+
+/*------------------------------------------Degradados 02/02/21---------------------------------------------------------*/
+
+/*------------------------------------------CSS Grid 08/02/21---------------------------------------------------------*/
+
+/*
+.servicios{  ------Crearemos otro <div> que tome todos los servicios y mandamos a llamar la clase ".servicios"-------
+
+    display: grid; ----------Agrega las opciones de CSS GRID = Define la ubicación y el tamaño de nuestros elementos------ 
+
+    grid-template-columns: 30rem 30rem; ------------ Medidad de las columnas ------------- Los rem son primero el ancho y luego el alto --------
+    grid-template-rows: 20rem 80rem;    --------Medidas de las filas----------
+
+    grid: 20rem 80rem / 30rem 30rem; -------------Es lo mismo que lo de arriba pero simplificado------------
+
+    grid-template-columns: 1fr 1fr 1fr; ---------------Lo dividiremos en 3 columnas y se dividen cada uno en una fraccion del 100% (1fr)---------
+}*/
+
+@media (min-width: 768px){
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem; /*------Da una separacion entre las cajas--------*/
+    }
+}
+
+.servicio .iconos{ /*Crearemos otro <div> que rodeé cada icono y le asignaremos la clase .iconos */
+    height: 15rem;
+    width: 15rem;
+    background-color:var(--amarilloIMC);
+    border-radius: 50%; /*Lo convierte en círculo*/
+    display: flex;
+    justify-content: space-evenly; /*Separa un poco los iconos entre si (Los que están juntos dentro de un círculo)*/
+    align-items: center;
+} /*Hecho esto cambiamos los íconos con los que queramos para que quede mejor*/
+
+.servicio h3{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.servicio p{
+    font-size: 1.5rem;
+    line-height: 2; /*Agrega Interlineado*/
+    text-align: center;
+}
+
+/*------------------------------------------CSS Grid 08/02/21---------------------------------------------------------*/
+
+
+/*------------------------------------------Formulario 09/02/21---------------------------------------------------------*/
+
+/*Se asigna el @media a la clase .servicios (linea 231)*/
+/*Encerraremos el fieldset con un <section> y le asignamos la clase formulario */
+
+.formulario{
+    background-color: gray;
+    width: min(65rem,100%); /*Busca que es más pequeño 60rem o el 100% de la pantalla?*/
+    margin: 3rem auto 3rem auto; /*Hack para centrar el formulario (No usar con objetos que sean display:flex recomendado en formularios)*/
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: var(--amarilloIMC);
+}
+
+/*crearemos un <div> que englobe cada mini-seccion del formulario*/
+/*crearemos un <div> que englobe todos los <div> que recien creamos --- Ejemplo en paddlet*/
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: whitesmoke;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+    font-size: 1.5rem;
+}
+
+
+.campo input{
+    width: 100%;
+    background-color:whitesmoke;
+    border:none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+
+}
+
+/*--------------Agregamos utilidades--------------------*/
+.w-100{ /*Se manda a llamar en el botón de abajo*/
+    width: 100%;
+}
+
+.w-75{ /*Se manda a llamar en el botón de abajo*/
+    width: 75%;
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+@media(min-width: 768px){
+    .w-100{
+        width: 15rem;
+    }
+    .w-75{
+        width: 15rem;
+    }
+}
+/*--------------Agregamos utilidades--------------------*/
+
+/*------------------------------------------Formulario 09/02/21---------------------------------------------------------*/
+.campo textarea{
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.contenedor-campos{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-rows: auto auto;
+}
+
+.alinear-centro{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, /*quita las flechitas de los números*/
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+.footer{
+    text-align: center;
+    font-size: 1.5rem;
+}
